@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>Estudiante</h1>
+  
+  <form method="post" th:action="@{/estudiante}" th:object="${estudiante}">
+  	<label>Nombre</label><input type="text" th:field="*{nombre}"><br>
+  	<span th:errors="*{Nombre}" style="color: #FF0000"></span><br>
+	<label>Apellido</label><input type="text" th:field="*{apellido}"><br>
+	<span th:errors="*{Apellido}" style="color: #FF0000"></span><br>
+	<label>Carne</label><input type="text" th:field="*{carne}"><br>
+	<span th:errors="*{Carne}" style="color: #FF0000"></span><br>
+	<label>Carrera</label><input type="text" th:field="*{carrera}"><br>
+	<span th:errors="*{Carrera}" style="color: #FF0000"></span><br>
+	
+	
+	<input type="submit" value="Guardar">
+	<br>
+	<br>
+	<br>
+  </form>
+  <form method="get" th:action="@{/listado}"> 
+  <input type="submit" value="Listado">
+  </form>
+</body>
+</html>
