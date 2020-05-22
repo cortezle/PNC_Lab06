@@ -21,8 +21,25 @@ public class MainController {
 	
 	@Autowired
 	private EstudianteService estudianteService;
+	
+	
+	@RequestMapping("/")
+	public ModelAndView Main() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main");
+		return mav;
+	}
+	
+	/*@RequestMapping(value="/mostrarEstudiante",method=RequestMethod.POST)
+	public ModelAndView findOne(@RequestParam(value="codigo")int id) {
+		ModelAndView mav = new ModelAndView();
+		Estudiante estudiante = estudianteService.findOne(id);
+		mav.addObject("estudiante", estudiante);
+		mav.setViewName("estudiante");
+		return mav;
+	}*/
+	
 
-	//Mostrar lista estudiantes
 	@RequestMapping("/estudiante")
 	public ModelAndView initMain() {
 		ModelAndView mav = new ModelAndView();
